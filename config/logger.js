@@ -20,15 +20,15 @@ const logger = winston.createLogger({
                 winston.format.simple()
             )
         }), 
-        new winston.transport.Console(),
+        new winston.transports.Console(),
         new winston.transports.File({
             filename: 'log/http.log', 
             level: 'http', 
             format: winston.format.combine(
-                timestamp({
+                winston.format.timestamp({
                     format: 'YYYY-MM-DD hh:mm:ss.SSS A',
                 }),
-                json()
+                winston.format.json()
             )
         })
     ]
