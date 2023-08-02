@@ -3,17 +3,17 @@ const winston = require("winston");
 const logger = winston.createLogger({
     transports: [
         new winston.transports.File({
-            filename: 'error.log', 
+            filename: 'log/error.log', 
             level: 'error', 
             format: winston.format.json()
         }), 
         new winston.transports.File({
-            filename: 'warn.log', 
+            filename: 'log/warn.log', 
             level: 'warn', 
             format: winston.format.json()
         }), 
         new winston.transports.File({
-            filename: 'combined.log', 
+            filename: 'log/combined.log', 
             level: 'info', 
             format: winston.format.combine(
                 winston.format.colorize(), 
@@ -21,7 +21,7 @@ const logger = winston.createLogger({
             )
         }), 
         new winston.transports.File({
-            filename: 'http.log', 
+            filename: 'log/http.log', 
             level: 'http', 
             format: winston.format.combine(
                 timestamp({
