@@ -1,0 +1,69 @@
+{% extends "public/layout/main.njk" %}
+
+{% block body %}
+    <div class="hero">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: push; autoplay: true; min-height: 500; max-height: 700">
+            <ul class="uk-slideshow-items">
+                <li>
+                    <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                        <img src="/img/office-team.jpg" alt="" uk-cover>
+                    </div>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                        <h3 class="uk-margin-remove slide-heading">Find Your Next Career</h3>
+                        <p class="slide-text">We have a variety of roles available in many different industries. Let us help you find your next career!</p>
+                        <a href="#" class="slide-btn">Get Started</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-top-right">
+                        <img src="/img/team-meeting.jpg" alt="" uk-cover>
+                    </div>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                        <h3 class="uk-margin-remove slide-heading">Find Talent</h3>
+                        <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </li>
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+    </div>
+    <section class="section briefing-section">
+        <h2>Let us help you <em>achieve</em> your goals.</h2>
+        <div class="icon-group">
+            <span class="material-symbols-outlined up-icon ico">
+            trending_up
+            </span>
+            <span class="material-symbols-outlined case-icon ico">
+            cases
+            </span>
+            <span class="material-symbols-outlined trophy-icon ico">
+            trophy
+            </span>
+        </div>
+        <p class="briefing-section__content">
+            We are a recruitment company that strives for excellence. We seek to exceed our
+            client's expectations. Let's talk! We want to meet you personally and understand your needs.
+        </p>
+        <button class="contact-us-btn">Contact Us</button>
+    </section>
+    <section class="section-3">
+        <div class="grid">
+            <div class="col">
+                <span class="material-symbols-outlined ico-invert">
+                    check_box
+                </span>
+            </div>
+            <div class="col">
+                <h2>
+                    Collaborative Partnership, Assessment, Customized Staffing Solutions, Ongoing Engagement
+                </h2>
+                <p>Unlock your potential with quality talent acquisition.</p>
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <small>The Rockridge Group</small>
+    </footer>
+{% endblock %}
