@@ -276,7 +276,7 @@ em {
         position:fixed;
         flex-direction:column;
         align-items: center;
-        padding:0;
+        padding:5rem 0;
         right:0;
         top:0;
         height:100vh;
@@ -286,7 +286,7 @@ em {
         background:#fff;
         z-index:1002;
         margin-right:0;
-        transition:width .3s;
+        transition:width .2s;
 
         &__link {
             border-bottom:1px solid #ccc;

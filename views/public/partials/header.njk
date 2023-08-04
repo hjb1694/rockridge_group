@@ -88,3 +88,21 @@
         </button>
     </div>
 </header>
+
+<script>
+    const nav = document.querySelector('.nav');
+    const menuBtn = document.querySelector('.nav__menu-btn');
+    const closeBtn = document.querySelector('.nav__close-btn');
+
+    function openNav() {
+        nav.classList.add('show');
+    }
+
+    function closeNav() {
+        nav.classList.remove('show');
+    }
+
+    menuBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+
+</script>
