@@ -1,0 +1,49 @@
+{% extends "public/layout/main.njk" %}
+
+{% block body %}
+
+<div class="page-heading contact-page-heading">
+    <h1>Contact Us</h1>
+</div>
+
+<section class="contact-page-content">
+    <div class="contact-area">
+        <div class="contact-area__sidebar">
+            <div class="icon-container">
+                <span class="material-symbols-outlined" style="font-size:6rem;">
+                location_city
+                </span>
+            </div>
+            <address class="address">
+                <p>1850 Mount Diablo Blvd.</p>
+                <p>Suite 338</p>
+                <p>Walnut Creek, CA 94596</p>
+                <p>(925) 705-7300</p>
+            </address>
+        </div>
+        <div class="contact-area__main">
+            <h2>We are here to help! What can we do for you?</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="text-input text-input--white" placeholder="Your Name" />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="text-input text-input--white" placeholder="Your Email Address" novalidate />
+                </div>
+                <div class="form-group">
+                    <select class="select">
+                        <option>I am a...</option>
+                        <option>Job Seeker</option>
+                        <option>Talent Seeker</option>
+                        <option>[Other]</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea class="textarea" placeholder="Your message here..."></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

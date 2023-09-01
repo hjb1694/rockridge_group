@@ -205,7 +205,11 @@ em {
     padding:2rem;
 }
 
-.contact-us-btn{
+.contact-us-btn, 
+.contact-us-btn:link, 
+.contact-us-btn:visited {
+    display:inline-block;
+    text-decoration: none !important;
     background:transparent;
     border:2px solid #fff;
     font-size:2rem;
@@ -213,6 +217,7 @@ em {
     padding:.8rem 1rem;
     display:block;
     margin-top:3rem;
+    color:#fff !important;
 }
 
 .footer {
@@ -244,6 +249,106 @@ em {
     border: 2px solid #333;
 }
 
+.page-heading {
+    height:20rem;
+    margin-top:8.5rem;
+    box-shadow:0 0 1rem rgba(0,0,0,.8);
+
+    h1 {
+        font-size:2.8rem;
+        color:#fff;
+        background:rgba(0,0,0,.7);
+        padding:2rem;
+        width:50%;
+    }
+}
+
+.contact-page-heading {
+    background:url('/img/phone3.jpg') center / cover;
+}
+
+.contact-page-content {
+    padding:4rem 2rem;
+    min-height:60vh;
+}
+
+.icon-container {
+    background:rgba(255,255,255,.3);
+    padding:2rem;
+    border-radius:90%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-area {
+    max-width:110rem;
+    display:grid;
+    grid-template-columns:30rem auto;
+    margin: 0 auto;
+    overflow:hidden;
+    border-radius:5px;
+    box-shadow:0 0 1rem rgba(0,0,0,.24);
+
+    &__sidebar {
+        background:linear-gradient(to bottom right, #7f889b, #575d6a);
+        padding:2rem;
+        color:#fff;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__main {
+        background:#eee;
+        padding:2rem;
+
+        h2{
+            font-size:2.4rem;
+            color:#555;
+        }
+    }
+}
+
+.address {
+    p {
+        line-height:1;
+        margin:1rem 0 !important;
+    }
+}
+
+.form-group {
+    margin:1rem 0;
+}
+
+.text-input, 
+.select, 
+.textarea {
+    display:block;
+    width:100%;
+    outline:none;
+    padding:.8rem 1rem;
+    border:2px solid #ccc;
+    color: #444;
+}
+
+.text-input, 
+.select {
+    font-size:1.8rem;
+}
+
+.textarea {
+    font-size:1.6rem;
+    resize:none;
+    height:14rem;
+    font-family:inherit;
+}
+
+
 @media (max-width:800px) {
 
     .case-icon {
@@ -265,6 +370,10 @@ em {
 
     .ico-invert {
         margin-bottom:3rem;
+    }
+
+    .contact-area {
+        display:block;
     }
 
 
