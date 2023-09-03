@@ -25,13 +25,13 @@
             <h2>We are here to help! What can we do for you?</h2>
             <form id="contact-form" class="contact-form" method="POST" action="/contact">
                 <div class="form-group">
-                    <input type="text" id="contact-name" name="contact-name" class="text-input text-input--white" placeholder="Your Name" />
+                    <input type="text" id="contact-name" name="contact_name" class="text-input text-input--white" placeholder="Your Name" />
                 </div>
                 <div class="form-group">
-                    <input type="email" id="contact-email" name="contact-email" class="text-input text-input--white" placeholder="Your Email Address" novalidate />
+                    <input type="email" id="contact-email" name="contact_email" class="text-input text-input--white" placeholder="Your Email Address" novalidate />
                 </div>
                 <div class="form-group">
-                    <select id="contact-role" name="contact-role" class="select">
+                    <select id="contact-role" name="contact_role" class="select">
                         <option value="" disabled selected hidden>- My Role -</option>
                         <option value="job seeker">Job Seeker</option>
                         <option value="talent seeker">Talent Seeker</option>
@@ -39,7 +39,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <textarea id="contact-message" class="textarea" name="contact-message" placeholder="Your message here..."></textarea>
+                    <textarea id="contact-message" class="textarea" name="contact_message" placeholder="Your message here..."></textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="contact-form-subbut">Submit</button>

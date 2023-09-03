@@ -1,6 +1,7 @@
 const express = require("express");
 const stripTags = require("../middleware/sanitization/strip_tags");
 const stripEmojis = require("../middleware/sanitization/strip_emojis");
+const Queries = require("../database/queries");
 
 const router = express.Router();
 
@@ -17,9 +18,24 @@ router.post(
     '/contact', 
     stripTags,
     stripEmojis,
-    (req,res) => {
-        console.log('body: ', req.body);
-        res.render('public/contact_inquiry_submitted.njk');
+    async (req,res) => {
+
+        const {
+            contact_name, 
+            contact_email, 
+            contact_role, 
+            contact_message
+        } = req.body;
+
+        await Queries.insertContactInquiry(
+            contact_name, 
+            contact_email, 
+            contact_role, 
+            contact_message
+        );
+
+
+        return res.render('public/contact_inquiry_submitted.njk');
     }
 );
 
