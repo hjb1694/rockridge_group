@@ -23,27 +23,83 @@
         </div>
         <div class="contact-area__main">
             <h2>We are here to help! What can we do for you?</h2>
-            <form>
+            <form id="contact-form" class="contact-form" method="POST" action="/contact">
                 <div class="form-group">
-                    <input type="text" class="text-input text-input--white" placeholder="Your Name" />
+                    <input type="text" id="contact-name" class="text-input text-input--white" placeholder="Your Name" />
                 </div>
                 <div class="form-group">
-                    <input type="email" class="text-input text-input--white" placeholder="Your Email Address" novalidate />
+                    <input type="email" id="contact-email" class="text-input text-input--white" placeholder="Your Email Address" novalidate />
                 </div>
                 <div class="form-group">
-                    <select class="select">
-                        <option>I am a...</option>
-                        <option>Job Seeker</option>
-                        <option>Talent Seeker</option>
-                        <option>[Other]</option>
+                    <select id="contact-role" class="select">
+                        <option value="" disabled selected hidden>- My Role -</option>
+                        <option value="job seeker">Job Seeker</option>
+                        <option value="talent seeker">Talent Seeker</option>
+                        <option value="other">[Other]</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <textarea class="textarea" placeholder="Your message here..."></textarea>
+                    <textarea id="contact-message" class="textarea" placeholder="Your message here..."></textarea>
                 </div>
+                <div class="form-group">
+                    <button type="submit" class="contact-form-subbut">Submit</button>
+                </div>
+                <ul class="errbox contact-errbox"></ul>
             </form>
         </div>
     </div>
 </section>
+<script src="/vendor/string_length.js"></script>
+<script>
+    const contactForm = document.querySelector('#contact-form');
+    const fields = {
+        contactName: document.querySelector('#contact-name'), 
+        contactEmail: document.querySelector('#contact-email'), 
+        contactRole: document.querySelector('#contact-role'), 
+        contactMessage: document.querySelector('#contact-message')
+    }
+    const contactErrbox = document.querySelector('.contact-errbox');
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/is;
+
+    function validate() {
+        let errors = [];
+        contactErrbox.classList.remove('show');
+        contactErrbox.innerHTML = '';
+
+        for(let field in fields){
+            fields[field].classList.remove('error');
+        }
+        
+        stringLength(fields.contactName.value.trimRight()) < 2 && errors.push({field: 'contactName', message: 'Please enter your name.'});
+        !emailRegex.test(fields.contactEmail.value) && errors.push({field: 'contactEmail', message: 'Please enter a valid email address.'});
+        !fields.contactRole.value && errors.push({field: 'contactRole', message: 'Please select your role.'});
+        stringLength(fields.contactMessage.value.trimRight()) < 20 && errors.push({field: 'contactMessage', message: 'Message must be at least 20 characters.'});
+
+        if(errors.length){
+
+            contactErrbox.classList.add('show');
+
+            for(let error of errors){
+                fields[error.field].classList.add('error');
+                contactErrbox.insertAdjacentHTML('beforeend', `<li>${error.message}</li>`);
+            }
+
+        }
+
+        return !!!errors.length
+
+    }
+
+    function submit(e) {
+        e.preventDefault();
+
+        if(!validate()) return;
+
+        alert('Passed!');
+    }
+
+    contactForm.addEventListener('submit', submit);
+
+</script>
 
 {% endblock %}

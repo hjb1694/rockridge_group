@@ -336,6 +336,12 @@ em {
     color: #444;
 }
 
+.text-input.error, 
+.select.error, 
+.textarea.error {
+    border:2px solid #f00;
+}
+
 .text-input, 
 .select {
     font-size:1.8rem;
@@ -346,6 +352,40 @@ em {
     resize:none;
     height:14rem;
     font-family:inherit;
+}
+
+.contact-form-subbut {
+    display:block;
+    border:none;
+    border-radius:5px;
+    background:#7f889b;
+    padding:.8rem 1rem;
+    font-size:1.6rem;
+    color:#fff;
+    transition:background .3s;
+
+    &:hover {
+        background:#575d6a;
+    }
+}
+
+.errbox {
+    display:none;
+    border:2px solid #f00;
+    border-radius:5px;
+    background:#ffeaea;
+    list-style-position:inside;
+    font-size:1.4rem;
+    color:#f00;
+    padding:1rem;
+
+    &.show {
+        display:block;
+    }
+
+    &::marker{
+        color:#f00;
+    }
 }
 
 
