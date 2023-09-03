@@ -17,7 +17,8 @@ router.post(
     '/contact', 
     stripTags,
     stripEmojis,
-    (_req,res) => {
+    (req,res) => {
+        console.log('body: ', req.body);
         res.render('public/contact_inquiry_submitted.njk');
     }
 );
