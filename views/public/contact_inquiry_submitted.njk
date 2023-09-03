@@ -1,0 +1,24 @@
+{% extends "public/layout/main.njk" %}
+
+{% block body %}
+
+<div class="page-heading contact-page-heading">
+    <h1>Contact Us</h1>
+</div>
+
+<section class="contact-page-content">
+    <div class="contact-successful-message">
+        <p>Your contact inquiry has been successfully submitted!</p>
+        <p>You will be automatically redirected shortly. If not, <a href="/contact">click here.</a></p>
+    </div>
+</section>
+
+<script>
+
+    setTimeout(() => {
+        window.location.replace('/contact');
+    }, 5000);
+
+</script>
+
+{% endblock %}
